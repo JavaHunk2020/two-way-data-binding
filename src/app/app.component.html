@@ -2,50 +2,15 @@
 </header>
 
 <div  class="container">
-  <h2>{{username}} : {{psignup | json}}</h2>
+  <h2>This is parent component = {{psignup | json}}</h2>
   
   <img  src="https://cdn-images-1.medium.com/max/1093/1*Mou3DPI0Nbg8BH4LvYGwWw.png"  style="height: 100px;"/>
      <img  src="https://cdn-images-1.medium.com/max/1093/1*Mou3DPI0Nbg8BH4LvYGwWw.png"  style="height: 100px;"/>
        <img  src="https://cdn-images-1.medium.com/max/1093/1*Mou3DPI0Nbg8BH4LvYGwWw.png"  style="height: 100px;"/>
       <hr/>
      
-      <form>
-      
-       <div class="form-group" style="width: 60%">
-         <label>Username</label>
-         <input [(ngModel)]="username"  type="text"  name="username" class="form-control">
-      
-      </div>
-      
-      <div class="form-group" style="width: 60%">
-         <label>Password</label>
-         <input [(ngModel)]="password"  type="password" name="password" class="form-control">
-      </div>
-      
-        
-    <div class="form-group" style="width: 60%">
-         <label>Email</label>
-         <input [(ngModel)]="email" type="email"  name="email" class="form-control">
-      </div>
-      
-        <div class="form-group" style="width: 60%">
-         <label>Mobile</label>
-         <input   [(ngModel)]="mobile"  type="number" name="mobile" class="form-control">
-      </div>
-      
-         <div class="form-group" style="width: 60%">
-         <label>Address</label>
-         <textarea  [(ngModel)]="address"  rows="3" name="address" class="form-control"></textarea> 
-         
-      </div>
-      
-        <div class="form-group" style="width: 60%">
-       <button (click)="signup();" type="button" class="btn btn-primary">Signup</button>
-        &nbsp;&nbsp;
-           <button type="reset" class="btn btn-danger">Clear</button>
-           
-      </div>
-      </form>
+
+      <app-signup (nejar)="passDataToParent($event)"></app-signup>
       <hr/>
      
        

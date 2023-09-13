@@ -12,6 +12,33 @@
 
       <app-signup (nejar)="passDataToParent($event)"></app-signup>
       <hr/>
-     
+
+    
+      <p style="background-color: #eaf4ff;">Dogs</p>            
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Color</th>
+            <th>Photo</th>
+            <th>Breed</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let dog of dogs">
+            <td>{{dog.name}}</td>
+            <td>{{dog.color}}</td>
+            <td><img src="{{dog.image}}" style="height: 120px;"></td>
+            <td>{{dog.breed}}</td>
+            <td>
+              <button type="button" class="btn btn-primary">Details</button>
+              &nbsp;&nbsp;
+              <button (click)="deleteDog(dog);" type="button" class="btn btn-warning">Delete</button>
+            </td>
+          </tr>
+         
+        </tbody>
+      </table>
        
 </div>

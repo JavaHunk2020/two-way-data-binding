@@ -15,10 +15,12 @@ export class AppComponent implements OnInit{
   psignup:any;
   dogs : Dog[] =[];
 
+  //Constrcutor injection similar to the spring
   constructor(private sharedataService:SharedataService) {
   }
 
 
+  //This is used to load data while component is initialized 
   ngOnInit(): void {
     this.dogs=this.sharedataService.getDog();
   }

@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
 export class AuthComponent implements OnInit {
   username: any;
   password: any;
+  message:any;
 
 constructor(private router: Router) { }
 
@@ -16,6 +17,8 @@ constructor(private router: Router) { }
 signup() {
     if("jack"===this.username && "jill"===this.password) {
          this.router.navigate(['/dogs']);
+    }else{
+      this.message="Hmmm username and password are not correct!";
     }
 }
 

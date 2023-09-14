@@ -1,0 +1,29 @@
+<h2>Dogs Page!</h2>
+  <img style="height: 170px;width: 100%;" src="https://www.freewpheaders.com/wp-content/gallery/dogs-puppies/beautiful-puppies-header.jpg"/>
+      <hr/>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Color</th>
+      <th>Photo</th>
+      <th>Breed</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let dog of dogs">
+      <td>{{dog.name}}</td>
+      <td>{{dog.color}}</td>
+      <td><img src="{{dog.image}}" style="height: 120px;"></td>
+      <td><b>{{dog.breed}}</b></td>
+      <td>
+        <button type="button" class="btn btn-primary">Details</button>
+        &nbsp;&nbsp;
+        <button (click)="deleteDog(dog);" type="button" class="btn btn-warning">Delete</button>
+      </td>
+    </tr>
+   
+  </tbody>
+</table>

@@ -10,7 +10,7 @@ import { SharedataService } from '../sharedata.service';
 export class DogsListComponent implements OnInit {
 
   dog: Dog = new Dog('','','','');
-
+   buttonLabel:string = "Add Dog"; 
   dogs : Dog[] =[];
   
 
@@ -36,6 +36,7 @@ export class DogsListComponent implements OnInit {
       this.dog.color='';
       this.dog.image='';
       this.dog.breed='';
+      this.buttonLabel="Add Dog";
     }
 
   
@@ -45,6 +46,7 @@ export class DogsListComponent implements OnInit {
 
     editDog(dog: Dog , dogDialog:any) {
       this.dog=dog;
+      this.buttonLabel="Update";
       dogDialog.show();
   }
 

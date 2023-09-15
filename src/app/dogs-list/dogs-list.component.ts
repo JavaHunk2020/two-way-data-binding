@@ -9,6 +9,8 @@ import { SharedataService } from '../sharedata.service';
 })
 export class DogsListComponent implements OnInit {
 
+  dog: Dog = new Dog('','','','');
+
   dogs : Dog[] =[];
   
 
@@ -21,9 +23,29 @@ export class DogsListComponent implements OnInit {
       this.dogs=this.sharedataService.getDog();
     }
 
+
+    addDog(dogDialog:any) {
+      //Creating clone  
+      let clonedDog = Object.assign({}, this.dog);
+      this.dogs.push(clonedDog);
+      dogDialog.close();
+      
+      //Making this object blank - >>>
+      //form will become blank!
+      this.dog.name='';
+      this.dog.color='';
+      this.dog.image='';
+      this.dog.breed='';
+    }
+
   
     deleteDog(dog: Dog) {
         this.dogs = this.dogs.filter(kuchbhi=>kuchbhi.name!==dog.name);
     }
+
+    editDog(dog: Dog , dogDialog:any) {
+      this.dog=dog;
+      dogDialog.show();
+  }
 
 }
